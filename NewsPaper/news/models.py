@@ -23,7 +23,7 @@ class Category(models.Model):
 article = "AT"
 news = "NW"
 
-NEWS_TYPE = [
+POST_TYPE = [
     (article, "Статья"),
     (news, "Новости"),
 ]
@@ -33,7 +33,7 @@ class Post(models.Model):
 
     news_type = models.CharField(
         max_length=2,
-        choices=NEWS_TYPE,
+        choices=POST_TYPE,
         default=article)
     creation_date = models.DateTimeField(auto_now_add=True)
     post_title = models.CharField(max_length=225)
